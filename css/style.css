@@ -1,0 +1,491 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
+    background-image: url(../assets/image/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Poppins';
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: #FFF;
+    cursor: pointer;
+}
+h2{
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+
+}
+
+/* Navigation */
+header{
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+    top: 0;
+    left: 0;
+    background: transparent;
+    color: white;
+    padding: 0 2rem;
+}
+nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 550px;
+}
+.menu li a {
+    color: #FFF;
+}
+.logo {
+    width: 2rem;
+}
+.toggle{
+    display: none;
+}
+
+
+/* Partie responsive */
+@media all and (max-width:991px){
+    header{
+        background: transparent;
+    }
+    .toggle{
+        display: block;
+       font-size: 2rem;
+       cursor: pointer;
+       position: relative;
+       z-index: 20;
+    }
+    .logo{
+        position: relative;
+        z-index: 20;
+    }
+    .ouvrir{
+        display: block;
+    }
+   .toggle .fermer{
+    display: none;
+   }
+   .open .ouvrir{
+    display: none;
+   }
+   .open .fermer{
+    display: block;
+   }
+   .menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: space-around;
+    transform: translateX(-100%);
+    transition: transform 1s;
+   }
+   .menu li a{
+    font-size: 2rem;
+   }
+   .open .menu {
+    transform: translateX(0);
+   }
+   .skillBar{
+   background: yellow;
+   width: 200px;
+   display: none;
+   
+   }
+   .bar-container .bar{
+    background: pink;
+    width: 200px;
+   }
+   .progress{
+    background: red;
+}
+   .skills{
+    background: beige;
+    width: 580px;
+   }
+}
+@media all and (max-width:599px){
+    .skillBar span{
+        width: 100px;
+        font-size: 18px;
+    }
+    .bar-container .bar{
+        background: goldenrod;
+        width: 100px;
+    }
+    .skills{
+         background: beige;
+         width: 380px;
+    }
+    .video video{
+        width: 300px;
+    }
+}
+@media all and (max-width:399px){
+    .skillBar span{
+        width: 100px;
+        font-size: 12px;
+    }
+    .bar-container .bar{
+        background: goldenrod;
+        width: 70px;
+    }
+    .skills{
+         background: beige;
+         width: 280px;
+    }
+    .video video{
+        width: 250px;
+    }
+}
+
+/* Partie Introduction */
+.container{
+   background: transparent;
+    margin: 0 auto;
+    padding: 12px 20px;
+}
+
+.presentation{
+    width: 100%;
+    height: 900px;
+    background: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.presentatioon-title{
+    font-size: 4rem;
+    color: yellow;
+}
+
+.presentation-2{
+    font-size: 2rem;
+    color: yellow;
+}
+
+/* Partie Parcours */
+.info {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../assets/image/student-849822__480.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 8px auto;
+    padding: 12px 20px;
+    font-size: 2rem;
+    color: #000;
+}
+.info h2{
+    font-size: 3rem;
+}
+.file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.file a{
+    color: red;
+    text-shadow: 2px 3px 4px ;
+}
+button{
+    background: #000;
+    width: 10rem;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+/* Partie Compétences */
+.bloc-1{
+    width: 100%;
+    height: 900px;
+    background:rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.skills{
+    display: flex;
+    border: 2px solid black;
+    padding: 4em;
+    border-radius: 30px;
+}
+.skills::before{
+    content: "Compétences";
+    position: absolute;
+    top: -18%;
+    left: 40px;
+    background: #ebecf0;
+    padding: 5px 10px;
+    color: #6d7587;
+}
+.skills .skillBar{
+    display: flex;
+    flex-direction: column;
+    color: #6d7587;
+    font-size: 2em;
+    font-weight: 500;
+    margin-right: 40px;
+}
+.skills .skillBar span{
+    margin: 15px 0;
+    box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #FFFFFFFF;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 50px;
+    border: 5px solid #ebecf0;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.skills .skillBar span:hover{
+    color: #1a60f2;
+    box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #FFFFFFFF,
+        inset 9.91px 9.91px 15px #d9dade, inset -9.91px -9.91px 15px #FFFFFFFF;   
+}
+
+.bar-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.bar{
+    width: 400px;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: inset 6px 6px 6px #d9dade,  
+    inset -6px -6px 6px #FFFFFFFF;
+}
+.bar .progress{
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to right,#0e3fea, #1d69f5);
+    border-radius: 20px;
+}
+
+.bar:nth-child(1) .progress{
+    width: 50%;
+}
+
+.bar:nth-child(2) .progress{
+    width: 80%;
+}
+
+.bar:nth-child(3) .progress{
+    width: 70%;
+}
+
+.bar:nth-child(4) .progress{
+    width: 50%;
+}
+.bar:nth-child(5) .progress{
+    width: 85%;
+}
+
+.bar:nth-child(6) .progress{
+    width: 90%;
+}
+
+
+/* Partie Parcours scolaire */
+.bloc-2{
+    background: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card{
+    width: 300px;
+    margin: 100px auto;
+    background-color: gray;
+    box-shadow: 0px 5px 20px black;
+}
+
+.card:hover .card-image img{
+    width: 160%;
+    filter: grayscale(0);
+}
+
+.card-image{
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+.card-image img{
+    width: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: grayscale(1);
+    transition-property: all;
+    transition-duration: 3s;
+    transition-timing-function: ease;
+}
+.card-body{
+    text-align: center;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+.card-date{
+    font-family: 'Poppins';
+}
+
+.card-date, .card-title{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/* Partie experience*/
+.bloc-3{
+    background: rebeccapurple;
+    display: flex;
+    justify-content: center;
+align-items: center;
+    width: 100%;
+    height: 900px;
+}
+
+.cd-time-bloc{
+    background-color: gray;
+    box-shadow: 0px 5px 20px black;
+    border: 1px solid white;
+    text-align: center;
+}
+
+
+.cd-time-bloc .content-skills{
+    font-size: 14px;
+    padding: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cd-time-bloc .content-skills li {
+    background: #40484D;
+    border-radius: 2px;
+    padding: 2px 10px;
+    color: wheat;
+    margin: 3px 2px;
+    flex-grow: 1;
+}
+
+
+/* Partie audio */
+.audio-visu{
+    background: lightslategray;
+    width: 100%;
+    height: 900px;
+    padding: 12px 20px;
+ 
+
+}
+#stop-btn ,#pause-btn{
+    display: none;
+}
+
+/* Partie video */
+.video{
+width: 100px;
+border-radius: 15px;
+
+}
+
+#pause, #stop-video{
+    display: none;
+}
+
+/* Partie diaporama */
+
+.diaporama{
+    width:90%;
+    background: lightgray;
+}
+.diapo{
+    position: relative;
+    overflow: hidden;
+    
+}
+.elements{
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
+.element{
+    flex: 1 0 100%;
+    position: relative;
+}
+.element > img{
+    width: 100%;
+}
+.caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.4);
+}
+#nav-gauche, #nav-droite{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+}
+#nav-droite{
+    right: 0;
+}
+
+
+/* Partie Contact */
+.contact{
+    background: rebeccapurple;
+    width: 100%;
+    padding: 12px 20px;
+    text-align: center;
+}
+.contact img{
+    width: 50px;
+}
+
+
+/* Partie footer */
+footer{
+    text-align: center;
+}
